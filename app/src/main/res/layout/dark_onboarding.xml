@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:background="@color/dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/component"
+        android:layout_width="316dp"
+        android:layout_height="279dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="31.01dp"
+        android:layout_marginRight="28.75dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_wrapHeight="735"
+        tools:layout_conversion_wrapWidth="928">
+
+        <ImageView
+            android:id="@+id/imageslide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:alpha="1" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="49.34dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/component"
+        tools:layout_conversion_wrapHeight="286"
+        tools:layout_conversion_wrapWidth="922">
+
+        <TextView
+            android:id="@+id/listen_to_y"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:fontFamily="@font/manrope_semibold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="top"
+            android:text="@string/listen_to_y"
+            android:textAppearance="@style/listen_to_y" />
+
+        <TextView
+            android:id="@+id/access_your"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@+id/listen_to_y"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="-2dp"
+            android:alpha="0.5"
+            android:fontFamily="@font/manrope_medium"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:gravity="top"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/access_your"
+            android:textAppearance="@style/access_your"
+            android:translationY="-1.69sp" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

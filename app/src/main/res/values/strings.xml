@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">PrakTik-Podcastplayer</string>
+    <string name="listen_to_y">
+
+Listen to your shows anytime, anywhere
+</string>
+    <string name="access_your">
+
+No internet? Listen to downloaded podcasts when you are offline
+</string>
+    <string name="skip">
+
+Skip
+</string>
+    <string name="discover_fr">
+
+Discover from the greatest library of Podcasts
+</string>
+    <string name="discover_am">
+
+500K+ shows from creators all around the world
+</string>
+    <string name="keep_track_">
+
+A modern, intuitive \ninterface
+</string>
+    <string name="access_yours">
+
+And an optional dark theme that is easy on the eyes
+</string>
+    <string name="welcome_abo">
+
+Welcome aboard!
+</string>
+    <string name="signup_to_g">
+
+Signup or Login to get started
+</string>
+    <string name="select_topi">
+
+Select Categories
+</string>
+    <string name="select_topi1">
+
+Pick at least three to get enough \nrecommendations to discover from
+</string>
+    <string name="select">Select</string>
+    <string name="done">done</string>
+
+</resources>
