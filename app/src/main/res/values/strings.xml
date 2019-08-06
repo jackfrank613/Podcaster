@@ -46,5 +46,24 @@ Pick at least three to get enough \nrecommendations to discover from
 </string>
     <string name="select">Select</string>
     <string name="done">done</string>
+    <string name="explore">Discover</string>
+    <string name="based_on_yo">
+
+Based on your interests
+</string>
+    <string name="discover">Top 40</string>
+    <string name="show_all">Show all</string>
+    <string name="alchemy_thi">
+
+The Road that\nlead to nowh...
+</string>
+    <string name="iheartradio">
+
+iHeartRadio
+</string>
+    <string name="downloads">
+
+Top 40
+</string>
 
 </resources>

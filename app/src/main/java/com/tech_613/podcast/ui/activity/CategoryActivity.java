@@ -25,7 +25,7 @@ public class CategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dark_select_category);
+        setContentView(R.layout.activity_select_category);
         category_recy=(RecyclerView)findViewById(R.id.recyclerView);
         btn_select=(Button)findViewById(R.id.button);
         imageListAdapter=new ImageListAdapter(this,imageList());
@@ -41,8 +41,9 @@ public class CategoryActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSelectbutton(int count) {
+            public void onSelectbutton(int count,int position) {
                 Log.d("count",String.valueOf(count));
+                Log.d("position",String.valueOf(position));
                 if(count >=1)
                 {
                     btn_select.setBackgroundResource(R.drawable.button_background_pressed);

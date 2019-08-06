@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.ImageModel;
@@ -78,6 +80,7 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
         ConstraintLayout constraintLayout;
         ImageView img_list, image_tricker;
+        CardView cardView;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -85,6 +88,7 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
             img_list = itemView.findViewById(R.id.imageView2);
             image_tricker = itemView.findViewById(R.id.tricker);
             constraintLayout=itemView.findViewById(R.id.contraintlayout);
+            cardView=itemView.findViewById(R.id.card_layout);
             itemView.setOnClickListener(this);
         }
 
@@ -107,14 +111,14 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
                 image_tricker.setVisibility(View.INVISIBLE);
                 imagePaths.get(adapterPosition).setCheck(false);
                 if(onImageListener!=null)
-                    onImageListener.onSelectbutton(count);
+                    onImageListener.onSelectbutton(count,adapterPosition);
             }
             else {
                 count++;
                 image_tricker.setVisibility(View.VISIBLE);
                 imagePaths.get(adapterPosition).setCheck(true);
                 if(onImageListener!=null)
-                    onImageListener.onSelectbutton(count);
+                    onImageListener.onSelectbutton(count,adapterPosition);
             }
         }
     }
@@ -125,7 +129,7 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
     public interface OnImageListener{
 
         void onImageClick(String path);
-        void onSelectbutton(int count);
+        void onSelectbutton(int count,int position);
     }
 
     public static int dp2px(Context context, int dp) {

@@ -130,4 +130,27 @@
         </item>
 
     </style>
+    <style name="explore">
+
+        <item name="android:textSize">
+            19sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+    <style name="based_on_yo">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
 </resources>
