@@ -1,6 +1,8 @@
 package com.tech_613.podcast.adpter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,11 +33,15 @@ public class SeriousListAdapter extends RecyclerView.Adapter<SeriousListAdapter.
         return new SeriousListAdapter.ViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull SeriousListAdapter.ViewHolder viewHolder, int i) {
         SeriousModel seriousModel=seriousModels.get(i);
         viewHolder.txt_body.setText(seriousModel.getS_body());
+//        viewHolder.txt_body.setTextColor(Color.WHITE);
+//        viewHolder.txt_body.setAlpha((float) 0.7);
         viewHolder.txt_title.setText(seriousModel.getS_title());
+//        viewHolder.txt_title.setTextColor(Color.WHITE);
         viewHolder.imageView.setImageResource(seriousModel.getSerious_image());
     }
 

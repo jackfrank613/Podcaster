@@ -1,6 +1,7 @@
 package com.tech_613.podcast.adpter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,6 +38,7 @@ public class SubitemListAdapter extends RecyclerView.Adapter<SubitemListAdapter.
 
         SubitemModel subitemModel=subitemModels.get(i);
         viewHolder.sub_title.setText(subitemModel.getTitle());
+//        viewHolder.sub_title.setTextColor(Color.WHITE);
         seriousListAdapter=new SeriousListAdapter(context,subitemModel.getSeriousModel());
         GridLayoutManager gridLayoutManager=new GridLayoutManager(context,3);
         viewHolder.serious_recyclerview.setLayoutManager(gridLayoutManager);

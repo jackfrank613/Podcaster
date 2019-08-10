@@ -1,6 +1,8 @@
 package com.tech_613.podcast.adpter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -48,12 +50,18 @@ public class TopListAdapter extends RecyclerView.Adapter<TopListAdapter.ViewHold
         return new TopListAdapter.ViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull TopListAdapter.ViewHolder viewHolder, int i) {
         TopModel topModel=topModels.get(i);
         viewHolder.imageView.setImageResource(topModel.getTop_image());
         viewHolder.txt_title.setText(topModel.getTitle());
+//        viewHolder.txt_title.setTextColor(Color.WHITE);
         viewHolder.txt_body.setText(topModel.getBody());
+//        viewHolder.txt_body.setTextColor(Color.WHITE);
+//        viewHolder.txt_body.setAlpha((float) 0.7);
+
+
 //        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) viewHolder.itemView.getLayoutParams();
 //        layoutParams.width=ITEM_WIDTH;
 //        layoutParams.height=ITEM_HEIGHT;

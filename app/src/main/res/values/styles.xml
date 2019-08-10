@@ -152,5 +152,11 @@
         </item>
 
     </style>
+    <style name="BottomNavigation">
+        <item name="android:background">@color/white</item>
+        <!--<item name="itemBackground">@drawable/menu_item_background</item>-->
+        <item name="itemIconTint">@drawable/bottom_item_tint</item>
+        <!--<item name="itemTextColor">@drawable/menu_background</item>-->
+    </style>
 
 </resources>
