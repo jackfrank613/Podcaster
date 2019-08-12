@@ -13,7 +13,9 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.BannerListAdapter;
@@ -32,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private static int ITEM_WIDTH = 0;
     private static int ITEM_HEIGHT = 0;
-    private ImageView imageView,imageView1,edit_pencil;
+    private LinearLayout edit_pencil;
     private RecyclerView top_recyclerview;
     public ArrayList<TopModel> topModels;
     private TopListAdapter topListAdapter;
@@ -43,6 +45,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<BannerModel> bannerModels;
     private BannerListAdapter bannerListAdapter;
     private ImageView bottom1,bottom2,bottom3,bottom4;
+    private TextView text_all;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         banner_recyclerview=(RecyclerView)findViewById(R.id.imageView3);
         top_recyclerview=(RecyclerView)findViewById(R.id.top_rc);
         subitem_recyclerview=(RecyclerView)findViewById(R.id.subcategories);
+        text_all=findViewById(R.id.textView6);
+        text_all.setOnClickListener(this);
         bottom1=findViewById(R.id.bt1);
         bottom1.setOnClickListener(this);
         bottom2=findViewById(R.id.bt2);
@@ -149,6 +154,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.imageView5:
                 startActivity(new Intent(HomeActivity.this,EditCategoryActivity.class));
+                finish();
+                break;
+
+            case R.id.textView6:
+                startActivity(new Intent(HomeActivity.this,Top40Activity.class));
+                finish();
                 break;
         }
     }

@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="36dp"
+    android:layout_marginStart="28dp"
+    android:layout_marginBottom="21dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+       <TextView
+           android:id="@+id/number"
+           android:layout_marginTop="13dp"
+           android:layout_width="30dp"
+           android:layout_height="26dp"
+           android:gravity="right"
+           android:textSize="19sp"
+           android:fontFamily="@font/manrope_thin"
+           android:textColor="@color/font_title"
+           android:text="12."/>
+       <ImageView
+           android:id="@+id/top_image"
+           android:layout_marginStart="14dp"
+           android:layout_width="52dp"
+           android:layout_height="52dp"
+           android:src="@drawable/byone"/>
+       <LinearLayout
+           android:layout_marginStart="8dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/top_title"
+               android:layout_marginTop="3dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:maxLines="1"
+               android:ellipsize="end"
+               android:textSize="17sp"
+               android:textColor="@color/font_title"
+               android:fontFamily="@font/manrope_medium"
+               android:maxLength="26"
+               android:text="Design Matters with Zoe..."/>
+           <TextView
+               android:id="@+id/top_body"
+               android:layout_marginTop="3dp"
+               android:textColor="@color/font_title"
+               android:alpha="0.7"
+               android:textSize="11sp"
+               android:fontFamily="@font/manrope_medium"
+               android:maxLines="1"
+               android:maxLength="16"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Design Observer"/>
+       </LinearLayout>
+
+
+   </LinearLayout>
 </android.support.constraint.ConstraintLayout>

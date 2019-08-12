@@ -35,7 +35,7 @@ public class OnBoardingScreen extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dark_firstscreen);
+        setContentView(R.layout.activity_firstscreen);
         //init xml setting
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

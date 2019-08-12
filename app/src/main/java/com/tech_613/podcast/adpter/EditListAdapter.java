@@ -38,10 +38,10 @@ public class EditListAdapter extends RecyclerView.Adapter<EditListAdapter.ViewHo
         viewHolder.bind(i);
         EditCategoryModel editCategoryModel=editCategoryModels.get(i);
         viewHolder.txt_title.setText(editCategoryModel.getC_title());
-        viewHolder.txt_title.setTextColor(Color.WHITE);
+//        viewHolder.txt_title.setTextColor(Color.WHITE);
         viewHolder.txt_description.setText(editCategoryModel.getC_description());
-        viewHolder.txt_description.setTextColor(Color.WHITE);
-        viewHolder.txt_description.setAlpha((float) 0.7);
+//        viewHolder.txt_description.setTextColor(Color.WHITE);
+//        viewHolder.txt_description.setAlpha((float) 0.7);
     }
 
     @Override

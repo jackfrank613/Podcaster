@@ -9,7 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.tech_613.podcast.MainActivity;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.EditListAdapter;
 import com.tech_613.podcast.model.EditCategoryModel;
@@ -23,10 +25,11 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
     private ImageView img_back;
     private EditListAdapter editListAdapter;
     private ArrayList<EditCategoryModel> editCategoryModels;
+    private LinearLayout lin_click;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_dark_edit_page);
+         setContentView(R.layout.activity_edit_page);
         initXml();
         editListAdapter=new EditListAdapter(this,onEditList());
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
@@ -53,8 +56,9 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
         bt_edit.setOnClickListener(this);
         edit_recyclerview=findViewById(R.id.recyclerView);
         edit_recyclerview.setOnClickListener(this);
-        img_back=findViewById(R.id.imageView8);
-        img_back.setOnClickListener(this);
+        lin_click=findViewById(R.id.layoutimage);
+        lin_click.setOnClickListener(this);
+
     }
 
     @Override
@@ -62,8 +66,8 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
 
         switch (v.getId())
         {
-            case R.id.imageView8:
-                startActivity(new Intent(EditCategoryActivity.this,HomeActivity.class));
+            case R.id.layoutimage:
+                startActivity(new Intent(EditCategoryActivity.this, MainActivity.class));
                 finish();
                 break;
         }
@@ -92,5 +96,11 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
 //            editCategoryModels.add(editCategoryModel);
 //        }
         return editCategoryModels;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(EditCategoryActivity.this,MainActivity.class));
+        finish();
     }
 }

@@ -39,7 +39,7 @@ public class OnboardingViewpagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater inflater=(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layoutScreen=inflater.inflate(R.layout.dark_onboarding,null);
+        View layoutScreen=inflater.inflate(R.layout.onboarding,null);
         ImageView imgSlide=layoutScreen.findViewById(R.id.imageslide);
         TextView title1=layoutScreen.findViewById(R.id.listen_to_y);
         TextView description1=layoutScreen.findViewById(R.id.access_your);

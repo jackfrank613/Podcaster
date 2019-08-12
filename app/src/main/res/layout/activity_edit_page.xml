@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button">
 
 
@@ -37,7 +38,7 @@
                 android:textSize="19sp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintStart_toEndOf="@+id/layoutimage"
                 app:layout_constraintTop_toTopOf="@+id/conlayout"
                 app:layout_constraintVertical_bias="1.0" />
 
@@ -54,16 +55,24 @@
                 app:layout_constraintStart_toStartOf="@+id/conlayout"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:id="@+id/layoutimage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="46dp"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 app:layout_constraintEnd_toStartOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_b_arrow" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="22dp"
+                    android:layout_height="15dp"
+                    app:srcCompat="@drawable/ic_b_arrow" />
+            </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>

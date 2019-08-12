@@ -23,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dark_splashscreen);
+        setContentView(R.layout.activity_splashscreen);
         background = (ConstraintLayout) findViewById(R.id.splashlayout);
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(duration);

@@ -12,6 +12,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottomnavigation"
         android:id="@+id/scrolllayout1">
 
@@ -85,21 +86,25 @@
         app:layout_constraintStart_toStartOf="@+id/conlayout12"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-
-
-    <ImageView
+    <LinearLayout
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="11dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/conlayout12"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/conlayout12"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_pencil" />
+        app:layout_constraintTop_toTopOf="@+id/conlayout12">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_pencil" />
+    </LinearLayout>
+
 
     <!--<ImageView-->
         <!--android:id="@+id/imageView7"-->
@@ -135,6 +140,7 @@
         android:text="@string/show_all"
         android:textColor="@color/font_title"
         android:textSize="13sp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:fontFamily="@font/manrope_regular"
         app:layout_constraintEnd_toEndOf="@+id/conlayout12"
         app:layout_constraintHorizontal_bias="1.0"
@@ -175,45 +181,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/scrolllayout1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
+
             app:layout_constraintBottom_toBottomOf="@+id/bottomnavigation"
             app:layout_constraintEnd_toEndOf="@+id/bottomnavigation"
             app:layout_constraintStart_toStartOf="@+id/bottomnavigation"
             app:layout_constraintTop_toTopOf="@+id/bottomnavigation">
-
-            <ImageView
-                android:id="@+id/bt1"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_compas"/>
-            <ImageView
-                android:id="@+id/bt2"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_gsearch"/>
-            <ImageView
-                android:id="@+id/bt3"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_gstar"/>
-            <ImageView
-                android:id="@+id/bt4"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_gprofile"/>
 
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

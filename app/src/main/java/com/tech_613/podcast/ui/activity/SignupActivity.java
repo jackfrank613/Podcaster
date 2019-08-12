@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.tech_613.podcast.MainActivity;
 import com.tech_613.podcast.R;
 
 public class SignupActivity extends AppCompatActivity {
@@ -16,13 +17,13 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dark_signup);
+        setContentView(R.layout.activity_signup);
         btn_facebook=(ImageView)findViewById(R.id.f_button);
         btn_google=(ImageView)findViewById(R.id.g_button);
         btn_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignupActivity.this,CategoryActivity.class));
+                startActivity(new Intent(SignupActivity.this, CategoryActivity.class));
                 finish();
             }
         });

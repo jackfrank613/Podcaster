@@ -69,5 +69,27 @@ Top 40
 
 Edit Categories
 </string>
+    <string name="search">Search</string>
+    <string name="search_hint">
+Type &amp; press enter
+</string>
+    <string name="no_results_">
 
+No results found
+</string>
+    <string name="try_modifyi">
+
+Try modifying your query or\n search for something else
+</string>
+    <string name="explore2">
+Preferences
+</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="down_page">Downloads</string>
+    <string name="preferences">Preferences</string>
+    <string name="general">General</string>
+    <string name="profile">Profile</string>
+    <string name="know_goal">Know more about our team and goal</string>
+    <string name="broken">Something broken? Help us fix it</string>
+    <string name="say_hi">Say hi or complain</string>
 </resources>
