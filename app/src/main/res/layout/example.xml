@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/manrope_semibold"
+                android:text="Edit Profile"
+                android:textColor="@color/font_title"
+                android:textSize="19sp"
+                />
+
+            <LinearLayout
+                android:id="@+id/backlinear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="24dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+             >
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                     />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="45dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/manrope_medium"
+                android:text="Name"
+                android:textColor="@color/font_title"
+                android:textSize="15sp"
+              />
+
+            <LinearLayout
+                android:id="@+id/name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.3"
+                android:background="@drawable/edit_profile_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+               >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="19dp"
+                    android:alpha="0.9"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/manrope_medium"
+                    android:textColor="@color/edit"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/manrope_medium"
+                android:text="City"
+                android:textColor="@color/font_title"
+                android:textSize="15sp"
+              />
+
+            <LinearLayout
+                android:id="@+id/city_layout"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.3"
+                android:background="@drawable/edit_profile_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+              >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="19dp"
+                    android:alpha="0.9"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/manrope_medium"
+                    android:textColor="@color/edit"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/manrope_medium"
+                android:text="Country"
+                android:textColor="@color/font_title"
+                android:textSize="15sp"
+              />
+
+            <LinearLayout
+                android:id="@+id/country_layout"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.3"
+                android:background="@drawable/edit_profile_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+              >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="19dp"
+                    android:alpha="0.9"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/manrope_medium"
+                    android:textColor="@color/edit"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/manrope_medium"
+                android:text="Languages"
+                android:textColor="@color/font_title"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.3"
+                android:background="@drawable/edit_profile_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+               >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="19dp"
+                    android:alpha="0.9"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/manrope_medium"
+                    android:textColor="@color/edit"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

@@ -15,21 +15,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/preferences"
-        android:textColor="@color/font_title"
-        android:textSize="19sp"
-        android:fontFamily="@font/manrope_semibold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/manrope_semibold"
+            android:text="@string/preferences"
+            android:textColor="@color/font_title"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -110,6 +110,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
             android:gravity="center"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout"

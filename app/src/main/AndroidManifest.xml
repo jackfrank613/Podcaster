@@ -34,30 +34,26 @@
 
 
         </activity>
-        <activity android:name=".ui.activity.HomeActivity"
-            android:screenOrientation="portrait">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
 
-        </activity>
         <activity android:name=".ui.activity.EditCategoryActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.activity.Top40Activity"
+
+        <activity android:name=".ui.activity.EditProfileActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".ui.activity.SearchActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-                <!--<action android:name="android.intent.action.SEARCH"/>-->
-            <!--</intent-filter>-->
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+        <activity android:name=".ui.activity.TopChatLocation"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".ui.activity.PodcastChannelActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".ui.activity.PlayingActivity"
+            android:screenOrientation="portrait">
+
         </activity>
         <provider
             android:name=".utils.QuerySuggestionProvider"

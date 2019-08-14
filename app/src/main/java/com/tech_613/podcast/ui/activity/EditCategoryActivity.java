@@ -35,6 +35,7 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         edit_recyclerview.setLayoutManager(linearLayoutManager);
         edit_recyclerview.setAdapter(editListAdapter);
+        edit_recyclerview.setFocusable(false);
         editListAdapter.setImageClickListener(new EditListAdapter.OnEditClickListener() {
             @Override
             public void onSelectbutton(int count, int position) {

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="398dp"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bottom_background">
+
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_grey_line" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:textSize="17sp"
+        android:textColor="@color/font_title"
+        android:text="Description"
+        android:fontFamily="@font/manrope_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="19dp"
+        android:text="In this episode some amazing \nstuff happens. \nYou will enjoy it a lot, no dout. Something \nsomething"
+        android:textColor="@color/font_title"
+        android:textSize="15sp"
+        android:fontFamily="@font/manrope_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_paly_button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView51">
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Website"
+        android:textSize="17sp"
+        android:textColor="#006AC1"
+        android:fontFamily="@font/manrope_regular"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/font_title">
+
+        </View>
+
+    <TextView
+        android:layout_marginStart="5dp"
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter"
+        android:textSize="17sp"
+        android:textColor="#006AC1"
+        android:fontFamily="@font/manrope_regular"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="252dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

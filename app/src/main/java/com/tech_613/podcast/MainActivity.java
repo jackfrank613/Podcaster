@@ -1,9 +1,11 @@
 package com.tech_613.podcast;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,8 +15,6 @@ import com.tech_613.podcast.fragment.ProfileFragment;
 import com.tech_613.podcast.fragment.SearchFragment;
 import com.tech_613.podcast.fragment.SubscriptionFragment;
 import com.tech_613.podcast.ui.activity.EditCategoryActivity;
-import com.tech_613.podcast.ui.activity.HomeActivity;
-import com.tech_613.podcast.ui.activity.Top40Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private ImageView bottom1,bottom2,bottom3,bottom4;
@@ -23,9 +23,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initXml();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, PoadCastFragment.newInstance()).addToBackStack("tag").commit();
+        Intent intent=getIntent();
 
+        if(intent.getStringExtra("fragment")!=null)
+            {
+                FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
+                transaction3.replace(R.id.frame_container, ProfileFragment.newInstance()).addToBackStack("tag").commit();
+                onChangebutton(3);
+            }
+            else {
+               FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+               transaction.replace(R.id.frame_container, PoadCastFragment.newInstance()).addToBackStack("tag").commit();
+            }
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode==1000)
+        {
+            Log.d("profile","profile");
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
     public void initXml(){

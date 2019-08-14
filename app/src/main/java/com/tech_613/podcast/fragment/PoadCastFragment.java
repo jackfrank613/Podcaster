@@ -27,8 +27,6 @@ import com.tech_613.podcast.model.SeriousModel;
 import com.tech_613.podcast.model.SubitemModel;
 import com.tech_613.podcast.model.TopModel;
 import com.tech_613.podcast.ui.activity.EditCategoryActivity;
-import com.tech_613.podcast.ui.activity.HomeActivity;
-import com.tech_613.podcast.ui.activity.Top40Activity;
 
 import java.util.ArrayList;
 

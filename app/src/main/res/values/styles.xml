@@ -4,6 +4,16 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_background</item>
     </style>
     <style name="LightTheme" parent="@android:style/Theme.Light">
     </style>
@@ -158,5 +168,10 @@
         <item name="itemIconTint">@drawable/bottom_item_tint</item>
         <!--<item name="itemTextColor">@drawable/menu_background</item>-->
     </style>
+
+    <!-- set the rounded drawable as background to your bottom sheet -->
+
+
+
 
 </resources>

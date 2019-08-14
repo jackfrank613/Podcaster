@@ -16,4 +16,6 @@
     <color name="edit_background">#E0E0E0</color>
     <color name="sback">#E6F0F7</color>
     <color name="timecolor">#00C974</color>
+    <color name="edit">#006AC1</color>
+    <color name="play">#EAF3FE</color>
 </resources>

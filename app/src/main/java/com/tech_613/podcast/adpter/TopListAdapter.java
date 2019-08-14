@@ -1,7 +1,9 @@
 package com.tech_613.podcast.adpter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -17,9 +19,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.TopModel;
+import com.tech_613.podcast.ui.activity.PodcastChannelActivity;
 
 import java.util.ArrayList;
 
@@ -68,6 +72,15 @@ public class TopListAdapter extends RecyclerView.Adapter<TopListAdapter.ViewHold
 //        if(i==2)layoutParams.leftMargin=dp2px(context,12);
 //        else if(i==1)layoutParams.leftMargin=dp2px(context,6);
 //        viewHolder.itemView.setLayoutParams(layoutParams);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(context,"topchannel",Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, PodcastChannelActivity.class));
+                ((Activity)context).finish();
+            }
+        });
     }
 
     @Override
