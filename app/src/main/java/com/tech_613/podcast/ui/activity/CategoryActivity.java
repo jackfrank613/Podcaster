@@ -17,6 +17,7 @@ import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.EqualSpacingItemDecoration;
 import com.tech_613.podcast.adpter.ImageListAdapter;
 import com.tech_613.podcast.model.ImageModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,13 @@ public class CategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_category);
+        if(PreferenceManager.getThem()==1){
+            setContentView(R.layout.activity_dark_select_category);
+        }
+        else {
+            setContentView(R.layout.activity_select_category);
+        }
+
         category_recy=(RecyclerView)findViewById(R.id.recyclerView);
         btn_select=(Button)findViewById(R.id.button);
         imageListAdapter=new ImageListAdapter(this,imageList());

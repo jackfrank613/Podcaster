@@ -15,6 +15,7 @@ import com.tech_613.podcast.MainActivity;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.EditListAdapter;
 import com.tech_613.podcast.model.EditCategoryModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,12 @@ public class EditCategoryActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_edit_page);
+        if(PreferenceManager.getThem()==1){
+            setContentView(R.layout.activity_dark_edit_page);
+        }
+        else {
+            setContentView(R.layout.activity_edit_page);
+        }
         initXml();
         editListAdapter=new EditListAdapter(this,onEditList());
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);

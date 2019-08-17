@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.DownloadListAdapter;
 import com.tech_613.podcast.adpter.TopPagerAdapter;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class DownloadFragment extends Fragment implements View.OnClickListener {
     private LinearLayout lin_click1, lin_click2;
@@ -32,7 +33,14 @@ public class DownloadFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_download_page, container, false);
+        View view =null;
+        if(PreferenceManager.getThem()==1){
+            view=inflater.inflate(R.layout.activity_dark_downloadpage, container, false);
+        }
+        else {
+            view=inflater.inflate(R.layout.activity_download_page, container, false);
+        }
+
         initXml(view);
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, ReadSubscriptionFragment.newInstance()).addToBackStack("tag").commit();

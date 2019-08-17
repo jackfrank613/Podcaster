@@ -27,6 +27,7 @@ import com.tech_613.podcast.model.SeriousModel;
 import com.tech_613.podcast.model.SubitemModel;
 import com.tech_613.podcast.model.TopModel;
 import com.tech_613.podcast.ui.activity.EditCategoryActivity;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -55,7 +56,15 @@ public class PoadCastFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.activity_home_screen,container,false);
+        View view=null;
+        if(PreferenceManager.getThem()==1)
+        {
+            view=inflater.inflate(R.layout.activity_dark_home_screen,container,false);
+        }
+        else {
+            view=inflater.inflate(R.layout.activity_home_screen,container,false);
+        }
+
         initXml(view);
         bannerListAdapter=new BannerListAdapter(getActivity(),onBannerList());
         LinearLayoutManager linearLayoutManager2=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);

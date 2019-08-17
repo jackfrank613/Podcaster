@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.tech_613.podcast.R;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class PlayingActivity extends AppCompatActivity {
 
@@ -22,7 +23,15 @@ public class PlayingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_now_playing);
+
+        if(PreferenceManager.getThem()==1)
+        {
+            setContentView(R.layout.activity_dark_playing);
+
+        }
+        else {
+            setContentView(R.layout.activity_now_playing);
+        }
          description_iamge=findViewById(R.id.imageView28);
          play_button=findViewById(R.id.imageView22);
          image_back=findViewById(R.id.imageView20);
@@ -31,11 +40,26 @@ public class PlayingActivity extends AppCompatActivity {
              public void onClick(View v) {
                  if(check)
                  {
-                     play_button.setImageResource(R.drawable.ic_pause_button);
+                     if(PreferenceManager.getThem()==1)
+                     {
+                         play_button.setImageResource(R.drawable.ic_yellow_pause);
+
+                     }
+                     else {
+                         play_button.setImageResource(R.drawable.ic_pause_button);
+                     }
+
+
                      check=false;
                  }
                  else {
-                     play_button.setImageResource(R.drawable.ic_paly_button);
+                     if(PreferenceManager.getThem()==1){
+                         play_button.setImageResource(R.drawable.ic_yellow_play);
+                     }
+                     else {
+                         play_button.setImageResource(R.drawable.ic_paly_button);
+                     }
+
                      check=true;
                  }
              }

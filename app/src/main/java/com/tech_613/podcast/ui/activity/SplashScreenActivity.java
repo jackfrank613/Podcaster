@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.tech_613.podcast.R;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -23,7 +24,13 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splashscreen);
+        if(PreferenceManager.getThem()==1){
+            setContentView(R.layout.activity_dark_splashscreen);
+        }
+        else {
+            setContentView(R.layout.activity_splashscreen);
+        }
+
         background = (ConstraintLayout) findViewById(R.id.splashlayout);
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(duration);

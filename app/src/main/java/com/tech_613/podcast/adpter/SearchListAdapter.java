@@ -2,6 +2,7 @@ package com.tech_613.podcast.adpter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.SearchModel;
+import com.tech_613.podcast.utils.PreferenceManager;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -48,6 +51,17 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
         viewHolder.top_image.setImageResource(searchModel.getTop_image());
         viewHolder.txt_topic.setText(searchModel.getTop_topic());
         viewHolder.txt_body.setText(searchModel.getTop_body());
+
+        if(PreferenceManager.getThem()==1)
+        {
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.white));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.white));
+
+        }
+        else {
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+        }
     }
 
     @Override

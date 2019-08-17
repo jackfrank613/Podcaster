@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.ScreenItem;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.List;
 
@@ -39,13 +40,21 @@ public class OnboardingViewpagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater inflater=(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layoutScreen=inflater.inflate(R.layout.onboarding,null);
+        View layoutScreen=null;
+        if(PreferenceManager.getThem()==1){
+           layoutScreen=inflater.inflate(R.layout.view_dark_onboarding_layout,null);
+        }
+        else {
+           layoutScreen=inflater.inflate(R.layout.onboarding,null);
+        }
+
         ImageView imgSlide=layoutScreen.findViewById(R.id.imageslide);
         TextView title1=layoutScreen.findViewById(R.id.listen_to_y);
         TextView description1=layoutScreen.findViewById(R.id.access_your);
         title1.setText(screenItems.get(position).getTitle());
         description1.setText(screenItems.get(position).getDescription());
         imgSlide.setImageResource(screenItems.get(position).getScreenimage());
+
         container.addView(layoutScreen);
         return layoutScreen;
 

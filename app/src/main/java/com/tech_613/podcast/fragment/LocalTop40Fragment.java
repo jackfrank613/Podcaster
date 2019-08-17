@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.Top40glAdapter;
 import com.tech_613.podcast.model.Top40glModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -22,6 +25,7 @@ public class LocalTop40Fragment extends Fragment{
     private RecyclerView page_recyclerview;
     private Top40glAdapter top40glAdapter;
     private ArrayList<Top40glModel> top40glModels;
+    private ConstraintLayout local_layout;
     public static LocalTop40Fragment newInstance(){
         LocalTop40Fragment localTop40Fragment=new LocalTop40Fragment();
         return localTop40Fragment;
@@ -33,6 +37,13 @@ public class LocalTop40Fragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_local,container,false);
+        local_layout=view.findViewById(R.id.local_background);
+        if(PreferenceManager.getThem()==1){
+            local_layout.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.dark));
+        }
+        else {
+            local_layout.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.background));
+        }
         page_recyclerview=view.findViewById(R.id.page1);
         top40glAdapter=new Top40glAdapter(getActivity(),onLocalList());
         page_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));

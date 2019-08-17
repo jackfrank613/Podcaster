@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.fragment.DownloadFragment;
 import com.tech_613.podcast.model.DownloadModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -42,20 +43,42 @@ public class DownloadListAdapter extends RecyclerView.Adapter<DownloadListAdapte
 
         DownloadModel downloadModel=downloadModels.get(i);
 
-        if(downloadModel.getCheck())
-        {
-            viewHolder.txt_time.setTextColor(ContextCompat.getColor(context, R.color.timecolor));
-            viewHolder.txt_time.setText("44%");
 
-        }
-        else {
-            viewHolder.txt_time.setTextColor(ContextCompat.getColor(context, R.color.font_title));
-            viewHolder.txt_time.setAlpha((float) 0.7);
-            viewHolder.txt_time.setText(downloadModel.getTop_number());
-        }
         viewHolder.txt_body.setText(downloadModel.getTop_body());
         viewHolder.txt_topic.setText(downloadModel.getTop_topic());
         viewHolder.down_image.setImageResource(downloadModel.getTop_image());
+
+        if(PreferenceManager.getThem()==1){
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.white));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.white));
+            if(downloadModel.getCheck())
+            {
+                viewHolder.txt_time.setTextColor(ContextCompat.getColor(context, R.color.timecolor));
+                viewHolder.txt_time.setText("44%");
+
+            }
+            else {
+                viewHolder.txt_time.setTextColor(ContextCompat.getColor(context,R.color.white));
+                viewHolder.txt_time.setAlpha((float) 0.7);
+                viewHolder.txt_time.setText(downloadModel.getTop_number());
+            }
+
+        }
+        else {
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            if(downloadModel.getCheck())
+            {
+                viewHolder.txt_time.setTextColor(ContextCompat.getColor(context, R.color.timecolor));
+                viewHolder.txt_time.setText("44%");
+
+            }
+            else {
+                viewHolder.txt_time.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+                viewHolder.txt_time.setAlpha((float) 0.7);
+                viewHolder.txt_time.setText(downloadModel.getTop_number());
+            }
+        }
 
     }
 

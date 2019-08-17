@@ -2,6 +2,7 @@ package com.tech_613.podcast.adpter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.LocationModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,16 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         viewHolder.flag_image.setImageResource(locationModel.getFlag());
         viewHolder.txt_country.setText(locationModel.getCountry());
         viewHolder.txt_word.setText(locationModel.getWord());
+        if(PreferenceManager.getThem()==1)
+        {
+            viewHolder.txt_word.setTextColor(ContextCompat.getColor(context,R.color.white));
+            viewHolder.txt_country.setTextColor(ContextCompat.getColor(context,R.color.white));
+        }
+        else {
+            viewHolder.txt_word.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_country.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+        }
+
         if(i==2)
         {
             viewHolder.check_image.setImageResource(R.drawable.ic_check);

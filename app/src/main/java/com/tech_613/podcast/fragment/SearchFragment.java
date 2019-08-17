@@ -17,6 +17,7 @@ import android.widget.SearchView;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.SearchListAdapter;
 import com.tech_613.podcast.model.SearchModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,13 @@ public class SearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.activity_search_screen,container,false);
+        View view =null;
+        if(PreferenceManager.getThem()==1){
+            view=inflater.inflate(R.layout.activity_dark_search,container,false);
+        } else {
+            view=inflater.inflate(R.layout.activity_search_screen,container,false);
+        }
+
         initXml(view);
         getList();
         searchView.setOnQueryTextListener(listener);

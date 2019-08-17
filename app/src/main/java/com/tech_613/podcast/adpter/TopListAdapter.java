@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.TopModel;
 import com.tech_613.podcast.ui.activity.PodcastChannelActivity;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -65,6 +67,16 @@ public class TopListAdapter extends RecyclerView.Adapter<TopListAdapter.ViewHold
 //        viewHolder.txt_body.setTextColor(Color.WHITE);
 //        viewHolder.txt_body.setAlpha((float) 0.7);
 
+         if(PreferenceManager.getThem()==1){
+             viewHolder.txt_title.setTextColor(Color.WHITE);
+             viewHolder.txt_body.setTextColor(Color.WHITE);
+             viewHolder.txt_body.setAlpha((float) 0.7);
+         }
+         else {
+             viewHolder.txt_title.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+             viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+             viewHolder.txt_body.setAlpha((float) 0.7);
+         }
 
 //        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) viewHolder.itemView.getLayoutParams();
 //        layoutParams.width=ITEM_WIDTH;

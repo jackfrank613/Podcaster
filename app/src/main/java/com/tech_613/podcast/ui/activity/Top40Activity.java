@@ -17,6 +17,7 @@ import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.TopPagerAdapter;
 import com.tech_613.podcast.fragment.GlobalTop40Fragment;
 import com.tech_613.podcast.fragment.LocalTop40Fragment;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class Top40Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,7 +31,8 @@ public class Top40Activity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_top40_page);
+
+
         initXml();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, LocalTop40Fragment.newInstance()).addToBackStack("tag").commit();

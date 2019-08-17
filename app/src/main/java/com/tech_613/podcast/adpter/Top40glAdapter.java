@@ -3,6 +3,7 @@ package com.tech_613.podcast.adpter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.Top40glModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,16 @@ public class Top40glAdapter extends RecyclerView.Adapter<Top40glAdapter.ViewHold
         viewHolder.txt_No.setText(top40glModel.getTop_number());
         viewHolder.txt_topic.setText(top40glModel.getTop_topic());
         viewHolder.txt_body.setText(top40glModel.getTop_body());
+        if(PreferenceManager.getThem()==1){
+            viewHolder.txt_No.setTextColor(ContextCompat.getColor(context,R.color.white));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.white));
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.white));
+        }
+        else {
+            viewHolder.txt_No.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_topic.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_body.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+        }
 
     }
 

@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.tech_613.podcast.fragment.EpisodeFragment;
 import com.tech_613.podcast.fragment.GlobalTop40Fragment;
 import com.tech_613.podcast.fragment.LocalTop40Fragment;
 import com.tech_613.podcast.fragment.PoadCastFragment;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class PodcastChannelActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,7 +30,13 @@ public class PodcastChannelActivity extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_channel);
+        if(PreferenceManager.getThem()==1)
+        {
+            setContentView(R.layout.podcastlist_dark_activity);
+        }
+        else {
+            setContentView(R.layout.activity_channel);
+        }
         initXml();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, EpisodeFragment.newInstance()).addToBackStack("tag").commit();
@@ -46,6 +54,7 @@ public class PodcastChannelActivity extends AppCompatActivity implements View.On
         txt_global=findViewById(R.id.global);
         image_arrow=findViewById(R.id.imageView15);
         image_arrow.setOnClickListener(this);
+
 
     }
 
@@ -73,6 +82,7 @@ public class PodcastChannelActivity extends AppCompatActivity implements View.On
                  startActivity(new Intent(PodcastChannelActivity.this,MainActivity.class));
                  finish();
                 break;
+
         }
     }
 }

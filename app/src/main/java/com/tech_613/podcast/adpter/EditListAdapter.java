@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.model.EditCategoryModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,18 @@ public class EditListAdapter extends RecyclerView.Adapter<EditListAdapter.ViewHo
         viewHolder.txt_description.setText(editCategoryModel.getC_description());
 //        viewHolder.txt_description.setTextColor(Color.WHITE);
 //        viewHolder.txt_description.setAlpha((float) 0.7);
+
+        if(PreferenceManager.getThem()==1)
+        {
+            viewHolder.txt_title.setTextColor(Color.WHITE);
+            viewHolder.txt_description.setTextColor(Color.WHITE);
+            viewHolder.txt_description.setAlpha((float) 0.7);
+        }
+        else {
+            viewHolder.txt_title.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_description.setTextColor(ContextCompat.getColor(context,R.color.font_title));
+            viewHolder.txt_description.setAlpha((float) 0.7);
+        }
     }
 
     @Override

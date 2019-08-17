@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_marginBottom="34dp"
+    android:id="@+id/epi_item_background"
     android:layout_height="wrap_content">
 
 

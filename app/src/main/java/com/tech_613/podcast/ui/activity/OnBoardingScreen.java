@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.OnboardingViewpagerAdapter;
 import com.tech_613.podcast.model.ScreenItem;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,13 @@ public class OnBoardingScreen extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_firstscreen);
+        if(PreferenceManager.getThem()==1){
+            setContentView(R.layout.activity_dark_firstscreen);
+        }
+        else {
+            setContentView(R.layout.activity_firstscreen);
+        }
+
         //init xml setting
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

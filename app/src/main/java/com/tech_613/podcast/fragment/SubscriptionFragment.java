@@ -17,6 +17,7 @@ import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.EqualSpacingItemDecoration;
 import com.tech_613.podcast.adpter.SubscriptionListAdapter;
 import com.tech_613.podcast.model.SubscriptionModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -37,7 +38,15 @@ public class SubscriptionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view=inflater.inflate(R.layout.activity_subscription,container,false);
+
+        View view=null;
+         if(PreferenceManager.getThem()==1){
+             view=inflater.inflate(R.layout.activity_dark_subscriptionpage,container,false);
+         }
+         else {
+             view=inflater.inflate(R.layout.activity_subscription,container,false);
+         }
+
        sub_recyclerview=view.findViewById(R.id.sub_recyclerviw);
         lin_downlaod=view.findViewById(R.id.lin_downlaod);
        subscriptionListAdapter=new SubscriptionListAdapter(getActivity(),onSubscriptList());

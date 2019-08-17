@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="398dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:id="@+id/bottom_background"
     android:layout_gravity="bottom"
     android:background="@drawable/bottom_background">
 
@@ -79,6 +80,7 @@
         tools:layout_editor_absoluteY="237dp" />
 
         <View
+            android:id="@+id/bottom_view"
             android:layout_width="2dp"
             android:layout_height="10dp"
             android:layout_marginStart="5dp"

@@ -18,4 +18,6 @@
     <color name="timecolor">#00C974</color>
     <color name="edit">#006AC1</color>
     <color name="play">#EAF3FE</color>
+    <color name="yellow">#FFCE00</color>
+
 </resources>

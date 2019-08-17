@@ -15,13 +15,22 @@ import com.tech_613.podcast.fragment.ProfileFragment;
 import com.tech_613.podcast.fragment.SearchFragment;
 import com.tech_613.podcast.fragment.SubscriptionFragment;
 import com.tech_613.podcast.ui.activity.EditCategoryActivity;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private ImageView bottom1,bottom2,bottom3,bottom4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        if(PreferenceManager.getThem()==1)
+        {
+            setContentView(R.layout.activity_dark_main);
+        }
+        else {
+            setContentView(R.layout.activity_main);
+
+        }
+
         initXml();
         Intent intent=getIntent();
 
@@ -42,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+      finish();
     }
 
     @Override
@@ -100,50 +115,76 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (p)
         {
             case 0:
-                bottom1.setImageResource(R.drawable.ic_compas);
-                bottom2.setImageResource(R.drawable.ic_gsearch);
-                bottom3.setImageResource(R.drawable.ic_gstar);
-                bottom4.setImageResource(R.drawable.ic_gprofile);
 
+                if(PreferenceManager.getThem()==1)
 
-//                bottom1.setImageResource(R.drawable.ic_discover1);
-//                bottom2.setImageResource(R.drawable.ic_gdsearch);
-//                bottom3.setImageResource(R.drawable.ic_gdstar);
-//                bottom4.setImageResource(R.drawable.ic_gdprofile);
+                {
+                    bottom1.setImageResource(R.drawable.ic_discover1);
+                bottom2.setImageResource(R.drawable.ic_gdsearch);
+                bottom3.setImageResource(R.drawable.ic_gdstar);
+                bottom4.setImageResource(R.drawable.ic_gdprofile);
+                }
+                else {
+                    bottom1.setImageResource(R.drawable.ic_compas);
+                    bottom2.setImageResource(R.drawable.ic_gsearch);
+                    bottom3.setImageResource(R.drawable.ic_gstar);
+                    bottom4.setImageResource(R.drawable.ic_gprofile);
+                }
+
                 break;
             case 1:
-                bottom1.setImageResource(R.drawable.ic_gcompas);
-                bottom2.setImageResource(R.drawable.ic_search);
-                bottom3.setImageResource(R.drawable.ic_gstar);
-                bottom4.setImageResource(R.drawable.ic_gprofile);
 
-//                bottom1.setImageResource(R.drawable.ic_gddiscover);
-//                bottom2.setImageResource(R.drawable.ic_dsearch);
-//                bottom3.setImageResource(R.drawable.ic_gdstar);
-//                bottom4.setImageResource(R.drawable.ic_gdprofile);
+                if(PreferenceManager.getThem()==1)
+                {
+                    bottom1.setImageResource(R.drawable.ic_gddiscover);
+                    bottom2.setImageResource(R.drawable.ic_dsearch);
+                    bottom3.setImageResource(R.drawable.ic_gdstar);
+                    bottom4.setImageResource(R.drawable.ic_gdprofile);
+                }
+                else {
+                    bottom1.setImageResource(R.drawable.ic_gcompas);
+                    bottom2.setImageResource(R.drawable.ic_search);
+                    bottom3.setImageResource(R.drawable.ic_gstar);
+                    bottom4.setImageResource(R.drawable.ic_gprofile);
+                }
+
+
+
                 break;
             case 2:
-                bottom1.setImageResource(R.drawable.ic_gcompas);
-                bottom2.setImageResource(R.drawable.ic_gsearch);
-                bottom3.setImageResource(R.drawable.ic_star);
-                bottom4.setImageResource(R.drawable.ic_gprofile);
+                if(PreferenceManager.getThem()==1)
+                {
+                    bottom1.setImageResource(R.drawable.ic_gddiscover);
+                    bottom2.setImageResource(R.drawable.ic_gdsearch);
+                    bottom3.setImageResource(R.drawable.ic_dstar);
+                    bottom4.setImageResource(R.drawable.ic_gdprofile);
+                }
+                else {
+                    bottom1.setImageResource(R.drawable.ic_gcompas);
+                    bottom2.setImageResource(R.drawable.ic_gsearch);
+                    bottom3.setImageResource(R.drawable.ic_star);
+                    bottom4.setImageResource(R.drawable.ic_gprofile);
+                }
 
-//                bottom1.setImageResource(R.drawable.ic_gddiscover);
-//                bottom2.setImageResource(R.drawable.ic_gdsearch);
-//                bottom3.setImageResource(R.drawable.ic_dstar);
-//                bottom4.setImageResource(R.drawable.ic_gdprofile);
+
+
                 break;
             case 3:
-                bottom1.setImageResource(R.drawable.ic_gcompas);
-                bottom2.setImageResource(R.drawable.ic_gsearch);
-                bottom3.setImageResource(R.drawable.ic_gstar);
-                bottom4.setImageResource(R.drawable.ic_profile);
 
+                if(PreferenceManager.getThem()==1)
+                {
+                    bottom1.setImageResource(R.drawable.ic_gddiscover);
+                    bottom2.setImageResource(R.drawable.ic_gdsearch);
+                    bottom3.setImageResource(R.drawable.ic_gdstar);
+                    bottom4.setImageResource(R.drawable.ic_dprofile);
+                }
+                else {
+                    bottom1.setImageResource(R.drawable.ic_gcompas);
+                    bottom2.setImageResource(R.drawable.ic_gsearch);
+                    bottom3.setImageResource(R.drawable.ic_gstar);
+                    bottom4.setImageResource(R.drawable.ic_profile);
+                }
 
-//                bottom1.setImageResource(R.drawable.ic_gddiscover);
-//                bottom2.setImageResource(R.drawable.ic_gdsearch);
-//                bottom3.setImageResource(R.drawable.ic_gdstar);
-//                bottom4.setImageResource(R.drawable.ic_dprofile);
                 break;
         }
 

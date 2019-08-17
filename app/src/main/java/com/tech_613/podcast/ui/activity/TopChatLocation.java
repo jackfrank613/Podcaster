@@ -14,6 +14,7 @@ import com.tech_613.podcast.MainActivity;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.adpter.LocationAdapter;
 import com.tech_613.podcast.model.LocationModel;
+import com.tech_613.podcast.utils.PreferenceManager;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,13 @@ public class TopChatLocation extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.top_chart_location);
+        if(PreferenceManager.getThem()==1){
+            setContentView(R.layout.activity_dark_toplocation);
+        }
+        else {
+            setContentView(R.layout.top_chart_location);
+        }
+
         initXml();
         LocationAdapter locationAdapter=new LocationAdapter(this,onLocationList());
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
