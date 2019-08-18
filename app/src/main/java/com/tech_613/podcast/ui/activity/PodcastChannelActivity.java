@@ -43,7 +43,6 @@ public class PodcastChannelActivity extends AppCompatActivity implements View.On
 
     }
     public void initXml(){
-
         lin_click1=(LinearLayout)findViewById(R.id.relative1);
         lin_click1.setOnClickListener(this);
         lin_click2=(LinearLayout)findViewById(R.id.relative2);

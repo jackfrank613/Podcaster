@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.tech_613.podcast.MainActivity;
 import com.tech_613.podcast.R;
 import com.tech_613.podcast.utils.PreferenceManager;
 
@@ -20,6 +21,13 @@ public class PlayingActivity extends AppCompatActivity {
     private ImageView description_iamge,play_button;
     private ImageView image_back;
     private boolean check=true;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +87,10 @@ public class PlayingActivity extends AppCompatActivity {
         image_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PlayingActivity.this,PodcastChannelActivity.class));
-                finish();
+//               Intent intent=new Intent(PlayingActivity.this, MainActivity.class);
+//               intent.putExtra("fragment","playing");
+//               startActivity(intent);
+                onBackPressed();
             }
         });
 

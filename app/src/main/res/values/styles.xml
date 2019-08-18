@@ -19,6 +19,10 @@
     </style>
     <style name="BlackTheme" parent="@android:style/Theme.Black">
     </style>
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="behavior_peekHeight">500dp</item>
+    </style>
+
     <style name="listen_to_y">
 
         <item name="android:textSize">

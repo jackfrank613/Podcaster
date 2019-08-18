@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -71,7 +73,7 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<EpisodeListAdapter.
                  final View bottomSheetLayout =LayoutInflater.from(context).inflate(R.layout.bottom_sheet_dialog, null);
                  final BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog(context);
                  mBottomSheetDialog.setContentView(bottomSheetLayout);
-                 ConstraintLayout bottom_layout=mBottomSheetDialog.findViewById(R.id.bottom_background);
+                 ConstraintLayout layout=mBottomSheetDialog.findViewById(R.id.bottom_background);
                  TextView txt_descrition=mBottomSheetDialog.findViewById(R.id.textView43);
                  TextView txt_title=mBottomSheetDialog.findViewById(R.id.textView51);
                  TextView txt_web=mBottomSheetDialog.findViewById(R.id.textView54);
@@ -80,7 +82,7 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<EpisodeListAdapter.
                  ImageView image_play=mBottomSheetDialog.findViewById(R.id.imageView25);
                  if(PreferenceManager.getThem()==1)
                  {
-                     bottom_layout.setBackgroundResource(R.drawable.bottom_dark_drawble);
+                     layout.setBackgroundResource(R.drawable.bottom_dark_drawble);
                      txt_descrition.setTextColor(ContextCompat.getColor(context,R.color.white));
                      txt_title.setTextColor(ContextCompat.getColor(context,R.color.white));
                      txt_web.setTextColor(ContextCompat.getColor(context,R.color.yellow));
@@ -89,7 +91,7 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<EpisodeListAdapter.
                      image_play.setImageResource(R.drawable.ic_yellow_play);
                  }
                  else {
-                     bottom_layout.setBackgroundResource(R.drawable.bottom_background);
+                     layout.setBackgroundResource(R.drawable.bottom_background);
                      txt_descrition.setTextColor(ContextCompat.getColor(context,R.color.dark));
                      txt_title.setTextColor(ContextCompat.getColor(context,R.color.dark));
                      txt_web.setTextColor(ContextCompat.getColor(context,R.color.edit));
@@ -98,12 +100,12 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<EpisodeListAdapter.
                      image_play.setImageResource(R.drawable.ic_paly_button);
                  }
                  mBottomSheetDialog.show();
-                 ImageView play=bottomSheetLayout.findViewById(R.id.imageView25);
-                 play.setOnClickListener(new View.OnClickListener() {
+//                 ImageView play=bottomSheetLayout.findViewById(R.id.imageView25);
+                 image_play.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View v) {
                          context.startActivity(new Intent(context, PlayingActivity.class));
-                         ((Activity)context).finish();
+//                         ((Activity)context).finish();
                          mBottomSheetDialog.dismiss();
                      }
                  });

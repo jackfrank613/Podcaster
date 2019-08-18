@@ -79,6 +79,14 @@ public class PoadCastFragment extends Fragment implements View.OnClickListener{
         LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         subitem_recyclerview.setLayoutManager(linearLayoutManager1);
         subitem_recyclerview.setAdapter(subitemListAdapter);
+
+        topListAdapter.setOnItemClickListner(new TopListAdapter.onItemClickListner() {
+            @Override
+            public void onClick() {
+                FragmentTransaction transaction4 = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction4.replace(R.id.frame_container, PoadcastChannelFragment.newInstance()).addToBackStack("tag").commit();
+            }
+        });
         return view;
     }
 

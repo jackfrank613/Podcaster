@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tech_613.podcast.R;
+import com.tech_613.podcast.fragment.EpisodeFragment;
 import com.tech_613.podcast.model.TopModel;
 import com.tech_613.podcast.ui.activity.PodcastChannelActivity;
 import com.tech_613.podcast.utils.PreferenceManager;
@@ -36,6 +38,15 @@ public class TopListAdapter extends RecyclerView.Adapter<TopListAdapter.ViewHold
     private static int ITEM_HEIGHT = 0;
     public Context context;
     private ArrayList<TopModel> topModels;
+    onItemClickListner onItemClickListner;
+
+    public void setOnItemClickListner(onItemClickListner onItemClickListner) {
+        this.onItemClickListner = onItemClickListner;
+    }
+
+    public interface onItemClickListner{
+        void onClick();//pass your object types.
+    }
 
 
     public TopListAdapter(Context context,ArrayList<TopModel> topModels){
@@ -89,8 +100,11 @@ public class TopListAdapter extends RecyclerView.Adapter<TopListAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 //Toast.makeText(context,"topchannel",Toast.LENGTH_SHORT).show();
-                context.startActivity(new Intent(context, PodcastChannelActivity.class));
-                ((Activity)context).finish();
+//                context.startActivity(new Intent(context, PodcastChannelActivity.class));
+//                ((Activity)context).finish();
+                onItemClickListner.onClick();
+
+
             }
         });
     }

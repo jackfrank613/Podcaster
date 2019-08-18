@@ -3,13 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/transparent"
+    >
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:id="@+id/bottom_background"
-    android:layout_gravity="bottom"
+    app:layout_constraintBottom_toBottomOf="parent"
     android:background="@drawable/bottom_background">
-
-
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="wrap_content"
@@ -40,11 +51,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="19dp"
-        android:text="In this episode some amazing \nstuff happens. \nYou will enjoy it a lot, no dout. Something \nsomething"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/manrope_regular"
+        android:text="In this episode some amazing \nstuff happens. \nYou will enjoy it a lot, no doubt. Something \nsomething"
         android:textColor="@color/font_title"
         android:textSize="15sp"
-        android:fontFamily="@font/manrope_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
@@ -62,6 +75,7 @@
         app:srcCompat="@drawable/ic_paly_button" />
 
     <LinearLayout
+        android:id="@+id/layout4"
         android:layout_width="match_parent"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="42dp"
@@ -101,4 +115,14 @@
         tools:layout_editor_absoluteX="143dp"
         tools:layout_editor_absoluteY="252dp" />
     </LinearLayout>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/layout4"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>

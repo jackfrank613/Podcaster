@@ -8,7 +8,10 @@
     android:layout_height="match_parent">
 <android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="300dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,9 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="#FFF2AA"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
                 android:id="@+id/imageView15"
                 android:layout_width="30dp"
@@ -31,19 +36,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+                <ImageView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_b_arrow" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_b_arrow" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="142dp"
+                android:layout_height="142dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView15"
                 app:srcCompat="@drawable/bitmap" />
@@ -57,11 +62,12 @@
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-            <ImageView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_share" />
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_share" />
             </LinearLayout>
 
             <TextView
@@ -69,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="99dp"
+                android:layout_marginTop="101dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/manrope_medium"
                 android:text="Creative Pep Talk \nPodcast"
@@ -83,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 android:alpha="0.5"
                 android:fontFamily="@font/manrope_medium"
@@ -94,10 +100,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
             <LinearLayout
+                android:id="@+id/layout_sub"
                 android:layout_width="134dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="21dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/subscribe_background"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -107,7 +114,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_medium"
+                    android:fontFamily="@font/manrope_bold"
                     android:text="SUBSCRIBE"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
@@ -118,7 +125,7 @@
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="31dp"
                 app:layout_constraintBottom_toBottomOf="@+id/layout2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -213,11 +220,7 @@
 
 
 </android.support.v4.widget.NestedScrollView>
-    <FrameLayout
-        android:id="@+id/framelayout_bottom_sheet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_behavior="@string/bottom_sheet_behavior" />
+
+
 
 </android.support.constraint.ConstraintLayout>
