@@ -31,13 +31,13 @@ public class CategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(PreferenceManager.getThem()==1){
-            setContentView(R.layout.activity_dark_select_category);
-        }
-        else {
-            setContentView(R.layout.activity_select_category);
-        }
-
+//        if(PreferenceManager.getThem()==1){
+//            setContentView(R.layout.activity_dark_select_category);
+//        }
+//        else {
+//
+//        }
+        setContentView(R.layout.activity_select_category);
         category_recy=(RecyclerView)findViewById(R.id.recyclerView);
         btn_select=(Button)findViewById(R.id.button);
         imageListAdapter=new ImageListAdapter(this,imageList());
@@ -46,6 +46,7 @@ public class CategoryActivity extends AppCompatActivity {
         category_recy.addItemDecoration(new EqualSpacingItemDecoration(0, EqualSpacingItemDecoration.GRID));
 //        category_recy.addItemDecoration(new EqualSpacingItemDecoration(17, EqualSpacingItemDecoration.VERTICAL));
         category_recy.setAdapter(imageListAdapter);
+        category_recy.setFocusable(true);
 
         btn_select.setOnClickListener(new View.OnClickListener() {
             @Override

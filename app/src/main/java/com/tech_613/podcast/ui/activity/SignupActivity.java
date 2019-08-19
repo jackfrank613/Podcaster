@@ -18,13 +18,13 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(PreferenceManager.getThem()==1){
-            setContentView(R.layout.activity_dark_signup);
-        }
-        else {
-            setContentView(R.layout.activity_signup);
-        }
-
+//        if(PreferenceManager.getThem()==1){
+//            setContentView(R.layout.activity_dark_signup);
+//        }
+//        else {
+//
+//        }
+        setContentView(R.layout.activity_signup);
         btn_facebook=(ImageView)findViewById(R.id.f_button);
         btn_google=(ImageView)findViewById(R.id.g_button);
         btn_google.setOnClickListener(new View.OnClickListener() {

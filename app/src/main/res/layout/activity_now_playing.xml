@@ -45,24 +45,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="51dp"
         android:layout_marginEnd="8dp"
         android:text="Now Playing"
         android:textSize="19sp"
         android:textColor="@color/font_title"
-        android:fontFamily="@font/manrope_medium"
+        android:fontFamily="@font/manrope_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--<ImageView-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:alpha="0.3"-->
+        <!--app:layout_goneMarginTop="18dp"-->
+        <!--android:src="@drawable/shadow_155854"-->
+        <!--app:layout_constraintStart_toStartOf="@id/imageView21"-->
+        <!--app:layout_constraintTop_toTopOf="@id/imageView21"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/imageView21"-->
+        <!--app:layout_constraintEnd_toEndOf="@id/imageView21"/>-->
     <ImageView
         android:id="@+id/imageView21"
-        android:layout_width="220dp"
-        android:layout_height="212dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/playing_image_background"
+        android:layout_width="211dp"
+        android:layout_height="211dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView44"
@@ -73,38 +80,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="45dp"
+        android:fontFamily="@font/manrope_semibold"
         android:text="@string/play_title"
         android:textColor="@color/font_title"
-        android:textSize="15sp"
-        android:fontFamily="@font/manrope_medium"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView21" />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/textView50"
         android:layout_width="232dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="74dp"
         android:layout_marginTop="6dp"
-        android:textAlignment="center"
-        android:layout_marginEnd="74dp"
-        android:text="Creative Pep Talk // July 21,2018"
-        android:fontFamily="@font/manrope_regular"
-        android:textSize="13sp"
-        android:textColor="@color/font_title"
-        android:alpha="0.5"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+        app:layout_constraintTop_toBottomOf="@+id/textView49">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creative Pep Talk"
+        android:fontFamily="@font/manrope_regular"
+        android:textSize="15sp"
+        android:textColor="@color/font_title"
+       />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" // July 21,2018"
+            android:fontFamily="@font/manrope_regular"
+            android:textSize="15sp"
+            android:textColor="@color/font_title"
+            android:alpha="0.5"
+            />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,11 +159,13 @@
         android:id="@+id/listener"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:progress="50"
         android:maxHeight="6dp"
+        android:background="@null"
+        android:padding="0dp"
         android:splitTrack="false"
         android:thumb="@drawable/ic_seekbutton"
         android:progressDrawable="@drawable/seekbar_style"
@@ -156,7 +178,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -198,9 +220,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="33dp"
             android:layout_marginBottom="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -213,14 +233,12 @@
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_question" />
 
-
-
             <ImageView
                 android:id="@+id/imageView27"
                 android:layout_width="0dp"
                 android:layout_height="14dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_zoom" />
+                app:srcCompat="@drawable/ic_15" />
 
             <ImageView
                 android:id="@+id/imageView26"

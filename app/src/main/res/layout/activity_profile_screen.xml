@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/dark"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v4.widget.NestedScrollView
@@ -24,7 +24,7 @@
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/manrope_semibold"
                 android:text="@string/preferences"
-                android:textColor="@color/white"
+                android:textColor="@color/font_title"
                 android:textSize="19sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
                 android:layout_marginEnd="24dp"
                 android:text="@string/general"
                 android:fontFamily="@font/manrope_medium"
-                android:textColor="@color/white"
+                android:textColor="@color/font_title"
                 android:alpha="0.5"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/background_dark_profile"
+                android:background="@drawable/profile_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/textView25"
@@ -99,7 +99,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="@string/profile"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp"/>
                             <TextView
                                 android:id="@+id/textView20"
@@ -109,7 +109,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Modify your profile"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp"/>
                         </LinearLayout>
 
@@ -151,7 +151,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Top Charts Location"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp"/>
 
                             <TextView
@@ -162,7 +162,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Choose from available charts"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp"/>
                         </LinearLayout>
 
@@ -201,7 +201,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Change Theme"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -211,8 +211,8 @@
                                 android:layout_marginTop="2dp"
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
-                                android:text="Switch to light mode"
-                                android:textColor="@color/white"
+                                android:text="Switch to dark mode"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp"/>
                         </LinearLayout>
 
@@ -245,7 +245,7 @@
                 android:alpha="0.5"
                 android:fontFamily="@font/manrope_medium"
                 android:text="Support"
-                android:textColor="@color/white"
+                android:textColor="@color/font_title"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -258,7 +258,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="34dp"
-                android:background="@drawable/background_dark_profile"
+                android:background="@drawable/profile_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -289,7 +289,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="About us"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -300,7 +300,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="@string/know_goal"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView26" />
@@ -329,7 +329,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Privacy"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -340,7 +340,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Read our privacy policy"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
@@ -363,7 +363,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Report a bug"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -373,7 +373,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="@string/broken"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp"/>
 
                         </LinearLayout>
@@ -396,7 +396,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="Contact us"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -406,7 +406,7 @@
                                 android:alpha="0.5"
                                 android:fontFamily="@font/manrope_medium"
                                 android:text="@string/say_hi"
-                                android:textColor="@color/white"
+                                android:textColor="@color/font_title"
                                 android:textSize="13sp" />
 
                         </LinearLayout>

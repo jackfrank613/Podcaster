@@ -41,7 +41,7 @@
         android:paddingTop="11dp"
         android:paddingBottom="11dp"
         android:layout_marginEnd="24dp"
-        android:paddingStart="22dp"
+        android:paddingStart="2dp"
         android:paddingEnd="15dp"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"

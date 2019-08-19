@@ -40,11 +40,13 @@
                         app:srcCompat="@drawable/ic_b_arrow" />
                 </LinearLayout>
 
+
                 <ImageView
                     android:id="@+id/imageView16"
                     android:layout_width="142dp"
                     android:layout_height="142dp"
                     android:layout_marginStart="32dp"
+                    android:padding="5dp"
                     android:layout_marginTop="30dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView15"
@@ -122,7 +124,7 @@
                     android:id="@+id/tablayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="31dp"
+                    android:layout_marginTop="32dp"
                     app:layout_constraintBottom_toBottomOf="@+id/layout2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

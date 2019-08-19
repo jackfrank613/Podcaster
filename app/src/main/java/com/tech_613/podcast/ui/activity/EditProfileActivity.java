@@ -1,15 +1,24 @@
 package com.tech_613.podcast.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.pchmn.materialchips.ChipsInput;
 import com.pchmn.materialchips.model.ChipInterface;
@@ -22,11 +31,13 @@ import com.tech_613.podcast.utils.PreferenceManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.KeyEvent.KEYCODE_ENTER;
+
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener{
 
     private LinearLayout lin_back;
     private LinearLayout name_lin,city_lin,country_lin,lan_lin;
-    private EditText txt_name,txt_city,txt_country,txt_lang;
+    private TextInputEditText txt_name,txt_city,txt_country,txt_lang;
     ChipsInput chipsInput;
     ArrayList<ContactChip> languagelist ;
     @Override
@@ -40,6 +51,84 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
         initXml();
 
+        txt_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.d("state","change");
+                txt_name.setCursorVisible(true);
+                if(PreferenceManager.getThem()==1)
+                {
+                    name_lin.setAlpha(1);
+                    city_lin.setAlpha((float) 0.2);
+                    country_lin.setAlpha((float) 0.2);
+                }
+               else {
+
+                    name_lin.setBackgroundResource(R.drawable.edit_focus_background);
+                    city_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    country_lin.setBackgroundResource(R.drawable.edit_background_two);
+                }
+
+            }
+        });
+        txt_city.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.d("state","change");
+                txt_city.setCursorVisible(true);
+                if(PreferenceManager.getThem()==1)
+                {
+                    name_lin.setAlpha((float)0.2);
+                    city_lin.setAlpha(1);
+                    country_lin.setAlpha((float) 0.2);
+                }
+                else {
+                    name_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    city_lin.setBackgroundResource(R.drawable.edit_focus_background);
+                    country_lin.setBackgroundResource(R.drawable.edit_background_two);
+                }
+
+
+            }
+        });
+        txt_country.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.d("state","change");
+                txt_country.setCursorVisible(true);
+                if(PreferenceManager.getThem()==1)
+                {
+                    name_lin.setAlpha((float)0.2);
+                    city_lin.setAlpha((float)0.2);
+                    country_lin.setAlpha(1);
+                }
+                else {
+                    name_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    city_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    country_lin.setBackgroundResource(R.drawable.edit_focus_background);
+
+                }
+
+            }
+        });
+
+        txt_lang.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+                if(PreferenceManager.getThem()==1){
+                    name_lin.setAlpha((float)0.2);
+                    city_lin.setAlpha((float)0.2);
+                    country_lin.setAlpha((float)0.2);
+                }
+                else {
+                    name_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    city_lin.setBackgroundResource(R.drawable.edit_background_two);
+                    country_lin.setBackgroundResource(R.drawable.edit_background_two);
+                }
+
+            }
+        });
 
     }
 
@@ -65,38 +154,14 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         txt_country.setOnClickListener(this);
         txt_name=findViewById(R.id.txt_name);
         txt_name.setOnClickListener(this);
-        chipsInput = (ChipsInput) findViewById(R.id.chips_input);
-        chipsInput.addChip("French", "French");
-        chipsInput.addChip("French", "French");
-        chipsInput.addChip("French", "French");
-        chipsInput.addChip("French", "French");
-//        languagelist=new ArrayList<>();
-//        languagelist.add(new ContactChip("French","french"));
-//        languagelist.add(new ContactChip("French","french"));
-//        languagelist.add(new ContactChip("French","french"));
-//        languagelist.add(new ContactChip("French","french"));
-//        chipsInput.setFilterableList(languagelist);
-
-        chipsInput.addChipsListener(new ChipsInput.ChipsListener() {
-            @Override
-            public void onChipAdded(ChipInterface chip, int newSize) {
-                // chip added
-                // newSize is the size of the updated selected chip list
-            }
-
-            @Override
-            public void onChipRemoved(ChipInterface chip, int newSize) {
-                // chip removed
-                // newSize is the size of the updated selected chip list
-            }
-
-            @Override
-            public void onTextChanged(CharSequence text) {
-                // text changed
-
-
-            }
-        });
+        txt_lang=findViewById(R.id.txt_lang);
+        txt_city.setCursorVisible(false);
+        txt_name.setCursorVisible(false);
+        txt_country.setCursorVisible(false);
+        txt_lang.requestFocus();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+//        chipsInput = (ChipsInput) findViewById(R.id.chips_input);
+//        chipsInput.addChip("French", "French");
 
     }
 
@@ -145,16 +210,18 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         switch (position)
         {
             case 0:
-                name_lin.setBackgroundResource(R.drawable.edit_focus_background);
-                txt_name.setCursorVisible(true);
+
+
+
                 break;
             case 1:
-                city_lin.setBackgroundResource(R.drawable.edit_focus_background);
-                txt_city.setCursorVisible(true);
+//                txt_city.requestFocus();
+//                city_lin.setBackgroundResource(R.drawable.edit_focus_background);
+
                 break;
             case 2:
-                country_lin.setBackgroundResource(R.drawable.edit_focus_background);
-                txt_country.setCursorVisible(true);
+//                country_lin.setBackgroundResource(R.drawable.edit_focus_background);
+//                txt_country.setCursorVisible(true);
                 break;
             case 3:
                 lan_lin.setBackgroundResource(R.drawable.edit_focus_background);
@@ -186,6 +253,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
+
+
 
 
 }
